@@ -3,7 +3,6 @@ $(document).ready(function () {
     $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
     // this function runs when the save button is clicked
     $(".saveBtn").on("click", function () {
-        console.log(this);
         // variable to differentiate between time blocks
         // "this" refers to the save button being clicked
         // parent is the row with the time id
@@ -28,6 +27,21 @@ $(document).ready(function () {
     $("#4pm .description").val(localStorage.getItem("4pm"));
     $("#5pm .description").val(localStorage.getItem("5pm"));
 
+
+    // adding function to color code each time block depending on current time of day
+    function timeTracker() {
+        // getting currenthour using moment.js
+        var currentHour = moment().hour();
+        // running this function for each timeblock which generates an integer depending on the given time block
+        $(".time-block").each(function () {
+            var timeRowHour = parseInt($(this).attr("id"));
+            // compare time-block integer to current hour integer
+            console.log(timeRowHour, currentHour)
+        })
+
+    }
+
+    timeTracker();
 })
 
 
