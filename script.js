@@ -17,7 +17,7 @@ $(document).ready(function () {
         localStorage.setItem(timeRow, textInput);
     })
 
-    //displaying the value saved in the text area by getting it from where it was set in local storage
+    //displaying the value saved in the text area by GETTING it from where it was SET in local storage
     $("#9am .description").val(localStorage.getItem("9am"));
     $("#10am .description").val(localStorage.getItem("10am"));
     $("#11am .description").val(localStorage.getItem("11am"));
