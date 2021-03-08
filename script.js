@@ -37,8 +37,23 @@ $(document).ready(function () {
             var timeRowHour = parseInt($(this).attr("id"));
             // compare time-block integer to current hour integer
             console.log(timeRowHour, currentHour)
+            // comparing two integers and applying classes depending on time
+            if (timeRowHour > currentHour) {
+                $(this).addClass("future");
+                $(this).removeClass("present");
+                $(this).removeClass("past");
+            }
+            else if (timeRowHour === currentHour) {
+                $(this).addClass("present");
+                $(this).removeClass("past");
+                $(this).removeClass("future");
+            }
+            else {
+                $(this).addClass("past");
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+            }
         })
-
     }
 
     timeTracker();
